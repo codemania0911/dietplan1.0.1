@@ -1,0 +1,1015 @@
+CHIROPRACTOR
+
+1. Please fix typo: http://envato.d.pr/1jmPc
+
+2. Screenshot size should be 1200x900, to account for HiDPI displays. Any 4:3 image size is acceptable, but 1200x900 is preferred. http://envato.d.pr/aWoM
+!!!!!
+3. Enqueue the Google fonts the right way https://gist.github.com/kailoon/e2dc2a04a8bd5034682c
+
+Good read: http://themeshaper.com/2014/08/13/how-to-add-google-fonts-to-wordpress-themes/ http://envato.d.pr/1kJnN
+
+!!!!!
+1. Use example.com instead of: http://envato.d.pr/Y6X5/5Nm4Rbb1
+
+2. No image placeholders please: http://envato.d.pr/1kAne/46XG8tHW
+
+3. Rename message to a comment: http://envato.d.pr/JSna/rFnBE9rw
+
+____
+
+
+ARCHBLOG
+
+1. Some of your files contain validation errors that will need to be fixed. Please be sure that all files validate before resubmitting.
+You can validate HTML at http://validator.w3.org
+
+2. remove thumbnail and preview from the download http://envato.d.pr/19frD/5ErtNeOQ
+
+3. Please use wp_enqueue to load any external scripts/stylesheet - wp_enqueue_script / wp_enqueue_style - http://codex.wordpress.org/Function_Reference/wp_enqueue_script#Functions
+Example(s) from your code and there are more: http://envato.d.pr/13Lss/4t6UytBx
+
+4. Site icon is provided by WP 4.3, you can use function_exist('wp_site_icon') for backward compatibility.
+
+5. Scripts and styles should not be hardcoded anywhere in your theme or added any other way but with wp_enqueue_* hook and to be added from the functions file. This includes custom JS/CSS.
+
+For inline styles use: https://developer.wordpress.org/reference/functions/wp_add_inline_style/ and for scripts https://developer.wordpress.org/reference/functions/wp_add_inline_script/
+
+Example(s) from your code and there are more: http://envato.d.pr/8VfH/1xX5BB1Q
+
+6. Please make sure your theme doesn't raise any errors or warnings with theme-check. http://envato.d.pr/1eReJ/5FhWvivZ
+
+7. No image placeholders, if user doesn't want an image, nothing should display. Theme still needs to work properly without them:
+
+8. Styling issue http://envato.d.pr/1i8lb/4irEtNTJ
+
+9. Cut off? http://envato.d.pr/11YX8/5NZTKs7E
+
+10. Woocommerce styling is broken http://envato.d.pr/1fTmG/3wvgWMtp
+
+11. You should avoid and not to hardcode custom body_class(). Main reason for this is being able to remove the class when needed i.e. child themes. What you can do - https://gist.github.com/kailoon/d4d22c9204909dff21eb
+
+ref: http://themeshaper.com/2014/11/20/mastering-the-post_class-function/ https://codex.wordpress.org/Function_Reference/body_class#Add_Classes_By_Filters
+
+12. Data Validation issues have been found in your theme. All dynamic data must be correctly escaped for the context where it is rendered. - All dynamic data must be escaped with esc_attr() before rendered in an html attribute. - Whenever you are rendering a url to the screen its value must be passed through esc_url() first. - If dynamic data is rendered inside an attribute that triggers a JavaScript event, it must be escaped with esc_js().
+
+Please make sure you read these articles:
+https://make.wordpress.org/themes/tags/writing-secure-themes/ http://codex.wordpress.org/Data_Validation http://developer.wordpress.com/themes/escaping/ http://code.tutsplus.com/articles/data-sanitization-and-validation-with-wordpress--wp-25536 https://vip.wordpress.com/documentation/best-practices/security/validating-sanitizing-escaping/
+
+13. Always use esc_url when sanitizing URLs, including WordPress related, also, all home_url() must include a trailing slash such as home_url(‘/‘)
+
+See: https://codex.wordpress.org/Function_Reference/esc_url
+
+14. Please use a unique prefix for all function names, custom images sizes, classes, CONSTANTS, hooks, public/global variables, and database entries to avoid conflict issues with plugins and other themes. For example, themename_ OR frameworkname_
+
+- Read more at http://themereview.co/prefix-all-the-things/
+- You can have frameworkname_ if you are using a framework while using themename_ for your themes.
+
+15. Please use the latest version of PrettyPhoto, more info - http://themeforest.net/forums/thread/security-vulnerability-affecting-prettyphoto-jquery-script/181180
+
+16. Please use proper hooks to enqueue any scripts / styles i.e.:
+
+- wp_enqueue_scripts for frontend
+- login_enqueue_scripts for login screen
+- admin_enqueue_scripts for admin dashboard
+
+These hooks should never be used to enqueue files:
+- admin_print_scripts
+- admin_print_styles
+- wp_print_styles
+- init
+- wp_head
+- wp_footer
+
+17. Directory path should be get_template_directory() and not dirname( FILE ).
+
+18. Please remove http://envato.d.pr/8Jt1/3wtyYKuY
+
+19. Please make sure you are providing the latest version of the plugins
+
+
+1. Your demo has issues. http://envato.d.pr/LTx9/2mzaepHN
+
+2. Some of your files contain validation errors that will need to be fixed. Please be sure that all files validate before resubmitting.
+You can validate HTML at http://validator.w3.org
+
+3. Remove commented code.
+
+4. wp_footer should be placed immediately before body closing tag.
+
+5. WARNING: .htaccess Hidden Files or Folders found.
+
+6. http://envato.d.pr/1bSjt/28WMvZYT
+
+7. http://envato.d.pr/1hyta/1cCtx8Gd
+
+8. How to test the blog/posts layout/functionality - Import the Theme Unit Test [http://codex.wordpress.org/Theme_Unit_Test] file and make sure that:
+
+- Posts display correctly, with no apparent visual problems or errors.
+- Posts display in correct order.
+- Page navigation displays and works correctly.
+- As "sticky posts" are a core feature, the theme should style and display them appropriately.
+- Lack of body text should not adversely impact the layout.
+- Theme must incorporate both the "Tag" and the "Category" taxonomies in some manner.
+- Floats are cleared properly for floated element (thumbnail image) at the end of the post content.
+
+Reference link: https://wpthemetestdata.wordpress.com/
+
+9. Theme options do not work. http://envato.d.pr/1hyta/1cCtx8Gd - http://envato.d.pr/ASdg/eJW67kTX
+
+10. All theme text strings are to be translatable and properly escaped.
+
+http://envato.d.pr/1dqUJ/30jh4Ckx
+
+11. Delete this. http://envato.d.pr/1hTSC/5AaChpan
+
+1. Please make sure you are providing the latest version of the plugins
+
+2. Please update the TGM Plugin Activation to the latest version, which fixes the security flaw - https://github.com/TGMPA/TGM-Plugin-Activation/releases 
+
+1. Settings appear in customizer. http://envato.d.pr/19Mo1/4b7Nzs7c
+But not once customizer is closed. http://envato.d.pr/7C1m/5AfG13tD 
+
+1. Same issue exists. Your theme is activated on a fresh instance of WP with reset database.
+
+http://envato.d.pr/184Jj/35SBR1mn - http://envato.d.pr/ZZUu/4M5jvZLZ - http://envato.d.pr/zcZ/5v9LYHbt
+
+2. http://envato.d.pr/1hlUF/3tMohdG5
+
+3. Pages never load. Indefinite pre-loader. http://envato.d.pr/qnVc/4qBBJiQ9
+
+4. Product pages are broken. http://envato.d.pr/1di4q/5LGUxT98
+
+1. Slugs, prefixing and text domains should not be a variable, please use a plain text instead.
+
+2. Translate all strings within PHP variable and escape where needed. JS and TGMPA included (when/if used). You need to use a text domain to denote all text belonging to that theme. The text domain is a unique identifier, which makes sure WordPress can distinguish between all loaded translations. This increases portability and plays better with already existing WordPress tools. Any strings within a PHP variable requires to be translated.
+
+https://developer.wordpress.org/themes/functionality/internationalization/
+
+http://envato.d.pr/jdDX/5f2IT5fF
+
+3. Theme doesn't load files properly here: http://envato.d.pr/13CJS/5O00scyV
+
+There are several functions available for getting the path:
+
+- get_template_directory - Filter the current theme directory path.
+
+- get_template_directory_uri - Filter the current theme directory URI.
+
+- get_stylesheet_directory - Filter the stylesheet directory path for current theme.
+
+- get_stylesheet_directory_uri - Filter the stylesheet directory URI.
+
+http://justintadlock.com/archives/2010/11/17/how-to-load-files-within-wordpress-themes
+
+4. Instagram Feed is outdated.
+
+5. AccessPress Social Counter is also outdated.
+
+6. Essential Grid is outdated too.
+
+7. Tiled Galleries Carousel Without Jetpack also outdated.
+
+8. Please go over your codes in details and make sure that nothing else stays outdated.
+
+1. Menu gets cut off.
+http://envato.d.pr/19WNv/tyx4Fu7C
+
+2. http://envato.d.pr/1gqMh/TZ1Ks6ev
+Make sure all the WP default widgets display properly in all widgetized areas. You can check with monster widgets plugin.
+
+3. http://envato.d.pr/2xxH/1PhEnpT2
+
+1. Logins, registration etc is a plugin-territory functionality: http://envato.d.pr/8RqX/19wU1ehB
+
+2. All scripts and styles (including comment reply, custom stuff) should be added from functions file and hooked with wp_enqueue_*, don't hardcode them or include them directly, like in header.php, footer.php, etc.
+
+https://github.com/Automattic/_s/blob/master/functions.php#L113-L127
+
+For inline styles you can use: https://developer.wordpress.org/reference/functions/wp_add_inline_style/ and for scripts https://developer.wordpress.org/reference/functions/wp_add_inline_script/
+
+http://envato.d.pr/FaBs/5wSjor2O
+
+3. Translate all strings within PHP variable and escape where needed. JS and TGMPA included (when/if used). You need to use a text domain to denote all text belonging to that theme. The text domain is a unique identifier, which makes sure WordPress can distinguish between all loaded translations. This increases portability and plays better with already existing WordPress tools. Any strings within a PHP variable requires to be translated.
+
+http://www.carriedils.com/wordpress-i18n/
+
+https://developer.wordpress.org/themes/functionality/internationalization/
+
+- http://envato.d.pr/tEgX/5nzAJqXr
+
+- http://envato.d.pr/1aaJc/txymdMJj
+
+4. Please don't remove core styles: http://envato.d.pr/18L3V/49F1eTlP
+
+5. Don't hardcode HTTP protocol: http://envato.d.pr/bqKv/2QCiXc54
+
+Don’t forget to run Theme Check as well https://wordpress.org/plugins/theme-check/
+
+Please check everything carefully, not fixing the issues or fixing them partially will delay your final approval.
+
+_____
+
+
+FRESHMAG
+
+1. Site icon is provided by WP 4.3, you can use function_exist('wp_site_icon') for backward compatibility.
+
+2. Please provide detailed item description. After editing, click save, resubmit. More info - https://help.market.envato.com/hc/en-us/articles/203039204-Tips-for-Excellent-Titles-Descriptions-and-Tags
+
+3. Scripts and styles should not be hardcoded anywhere in your theme or added any other way but with wp_enqueue_* hook and to be added from the functions file. This includes custom JS/CSS.
+
+For inline styles use: https://developer.wordpress.org/reference/functions/wp_add_inline_style/ and for scripts https://developer.wordpress.org/reference/functions/wp_add_inline_script/
+
+4. Please use wp_enqueue to load any external scripts/stylesheet - wp_enqueue_script / wp_enqueue_style - http://codex.wordpress.org/Function_Reference/wp_enqueue_script#Functions Example(s) from your code and there are more: http://envato.d.pr/11s69/4T8NUTDN
+
+5. You should avoid and not to hardcode custom body_class(). Main reason for this is being able to remove the class when needed i.e. child themes. What you can do - https://gist.github.com/kailoon/d4d22c9204909dff21eb
+
+ref: http://themeshaper.com/2014/11/20/mastering-the-post_class-function/ https://codex.wordpress.org/Function_Reference/body_class#Add_Classes_By_Filters
+
+6. Always use esc_url when sanitizing URLs, including WordPress related, also, all home_url() must include a trailing slash such as home_url(‘/‘)
+
+See: https://codex.wordpress.org/Function_Reference/esc_url
+
+7. Please make sure your theme doesn't raise any errors or warnings with theme-check. http://envato.d.pr/1djdr/2gvt4VHW
+
+8. Please make sure you are providing the latest version of the plugins
+
+9. Please update the TGM Plugin Activation to the latest version, which fixes the security flaw - https://github.com/TGMPA/TGM-Plugin-Activation/releases
+
+10. Please use get_template_directory when including/requiring files. Example(s) from your code and there are more: http://envato.d.pr/1hkhU/19SAy1fH
+
+11. There is no space between header and body http://envato.d.pr/13oWU/1dDvPPIX http://envato.d.pr/1j8b9/VMLdkxkF
+
+12. Page title is missing http://envato.d.pr/1jiLK/2mllnZBk
+
+13. The readability is low http://envato.d.pr/CqBn/40uo2pj9
+
+14. Directory path should be get_template_directory() and not dirname( FILE ).
+
+15. Please make sure you properly prepare your data for $wpdb.
+
+Please also read
+- http://codex.wordpress.org/Data_Validation#Database
+- http://codex.wordpress.org/Class_Reference/wpdb#Protect_Queries_Against_SQL_Injection_Attacks
+
+1. This is not something that a theme should be doing: http://envato.d.pr/13MJm/4xbnedxo And it's also unnecessary: https://make.wordpress.org/core/2015/07/06/comments-are-now-turned-off-on-pages-by-default/
+
+2. Ordered lists aren't displaying correctly: http://envato.d.pr/10NrB/2lSjYUEz 
+
+__________
+
+
+HANDYMAN
+
+1. http://envato.d.pr/Z1gy/501d9Jny Please provide documentation for this template:
+
+You can use a premade template or the Documenter tool for your documentation, both linked below:
+http://themeforest.net/forums/thread/the-documenter/40757?page=1
+http://themeforest.s3.amazonaws.com/108_helpFile/Template.zip
+
+2. Please use a unique prefix for all function names, custom images sizes, classes, CONSTANTS, hooks, public/global variables, and database entries to avoid conflict issues with plugins and other themes. For example, themename_ OR frameworkname_
+
+- Read more at http://themereview.co/prefix-all-the-things/
+- You can have frameworkname_ if you are using a framework while using themename_ for your themes.
+
+3. You should avoid and not to hardcode custom body_class(). Main reason for this is being able to remove the class when needed i.e. child themes. What you can do - https://gist.github.com/kailoon/d4d22c9204909dff21eb
+
+ref: http://themeshaper.com/2014/11/20/mastering-the-post_class-function/ https://codex.wordpress.org/Function_Reference/body_class#Add_Classes_By_Filters
+
+4. Please use wp_enqueue to load any external scripts/stylesheet - wp_enqueue_script / wp_enqueue_style - http://codex.wordpress.org/Function_Reference/wp_enqueue_script#Functions Example(s) from your code and there are more: http://envato.d.pr/4HbQ/2uQyGD1f
+
+5. Scripts and styles should not be hardcoded anywhere in your theme or added any other way but with wp_enqueue_* hook and to be added from the functions file. This includes custom JS/CSS.
+
+For inline styles use: https://developer.wordpress.org/reference/functions/wp_add_inline_style/ and for scripts https://developer.wordpress.org/reference/functions/wp_add_inline_script/
+
+6. The theme uses the register_taxonomy() function, which is plugin-territory functionality.
+
+7. flush_widget_cache() found in the file inc/widgets/widget-woo-categories/widget-woo-categories.php. Deprecated since version 4.4.
+
+8. Please make sure you are providing the latest version of the plugins
+
+9. Duplicated post title http://envato.d.pr/16TgX/4XtYrCAf
+
+10. The localization file should be in English and delivered as .POT file. .POT will contain all translation strings.
+
+.POT file name should match the themes-slug.
+
+Theme can include an actual translation files, but it should not add the en_US.mo or en_US.po because English already implies.
+
+11. Please remove http://envato.d.pr/Wwlk/GGkU39sO
+
+12. Please use get_template_directory when including/requiring files. Example(s) from your code and there are more: http://envato.d.pr/1iOF9/10MBO75W
+
+13. Styling issue http://envato.d.pr/1fPp5/431CUiHU
+
+14. Directory path should be get_template_directory() and not dirname( FILE ).
+
+15. Text domains should be theme-name-based and unique to this theme only. Don't define or use variables. The text domain name must use dashes and not underscores.
+
+See: https://developer.wordpress.org/themes/functionality/internationalization/#text-domains
+
+16. Data Validation issues have been found in your theme. All dynamic data must be correctly escaped for the context where it is rendered. - All dynamic data must be escaped with esc_attr() before rendered in an html attribute. - Whenever you are rendering a url to the screen its value must be passed through esc_url() first. - If dynamic data is rendered inside an attribute that triggers a JavaScript event, it must be escaped with esc_js().
+
+Please make sure you read these articles:
+https://make.wordpress.org/themes/tags/writing-secure-themes/ http://codex.wordpress.org/Data_Validation http://developer.wordpress.com/themes/escaping/ http://code.tutsplus.com/articles/data-sanitization-and-validation-with-wordpress--wp-25536 https://vip.wordpress.com/documentation/best-practices/security/validating-sanitizing-escaping/
+
+17. Always use esc_url when sanitizing URLs, including WordPress related, also, all home_url() must include a trailing slash such as home_url(‘/‘)
+
+See: https://codex.wordpress.org/Function_Reference/esc_url
+
+1. This won't be needed: http://envato.d.pr/10P9z/5KWEd5tl.
+
+http://envato.d.pr/1cepl/50Y7c4w4 will be enough.
+
+2. Slugs, prefixing and text domains should not be a variable, please use a plain text instead.
+
+http://envato.d.pr/134Fk/3uDDAZLd
+
+3. Translate all strings within PHP variable and escape where needed. JS and TGMPA included (when/if used). You need to use a text domain to denote all text belonging to that theme. The text domain is a unique identifier, which makes sure WordPress can distinguish between all loaded translations. This increases portability and plays better with already existing WordPress tools. Any strings within a PHP variable requires to be translated.
+
+http://www.carriedils.com/wordpress-i18n/
+
+https://developer.wordpress.org/themes/functionality/internationalization/
+
+http://envato.d.pr/14f0p/rirbSWHj
+
+4. Remove all unused code blocks like: http://envato.d.pr/197F4/3JeB5fOZ
+
+5. To avoid double loading, don't prefix third-party scripts and styles.
+
+Good: http://envato.d.pr/GSHc/3QuCG8eW
+
+Not Good: http://envato.d.pr/18sjk/4AzsgXbs
+
+6. Remove HTTP protocol: http://envato.d.pr/17I6x/1FL7QbyW otherwise HTTPS users will have issues.
+
+7. Theme needs to properly load files, but also to be consistent as well.
+
+There are several functions available for getting the path:
+
+- get_template_directory - Filter the current theme directory path.
+
+- get_template_directory_uri - Filter the current theme directory URI.
+
+- get_stylesheet_directory - Filter the stylesheet directory path for current theme.
+
+- get_stylesheet_directory_uri - Filter the stylesheet directory URI.
+
+http://justintadlock.com/archives/2010/11/17/how-to-load-files-within-wordpress-themes
+
+http://envato.d.pr/177Ug/4oDcfErg 
+
+1. Post titles are cutoff: http://envato.d.pr/1fcT7/oY22exfi
+
+2. Cart shouldn't display by default: http://envato.d.pr/1fCWe/4o2rw7sK
+
+3. Don't hide admin bar: http://envato.d.pr/18Lz3/1x4MCIPx
+
+4. Make content more visible: http://envato.d.pr/14KAI/5mHaxZ45
+
+
+_________
+
+
+LIFECOACH
+
+1. http://envato.d.pr/1k0kF/sWpQsmsw Please use wp_enqueue to load any external scripts/stylesheet - wp_enqueue_script / wp_enqueue_style - http://codex.wordpress.org/Function_Reference/wp_enqueue_script#Functions
+
+2. Scripts and styles should not be hardcoded anywhere in your theme or added any other way but with wp_enqueue_* hook and to be added from the functions file. This includes custom JS/CSS.
+
+For inline styles use: https://developer.wordpress.org/reference/functions/wp_add_inline_style/ and for scripts https://developer.wordpress.org/reference/functions/wp_add_inline_script/
+
+Example(s) from your code and there are more: http://envato.d.pr/1esf7/2y01u229
+
+3. You should avoid and not to hardcode custom body_class(). Main reason for this is being able to remove the class when needed i.e. child themes. What you can do - https://gist.github.com/kailoon/d4d22c9204909dff21eb
+
+ref: http://themeshaper.com/2014/11/20/mastering-the-post_class-function/ https://codex.wordpress.org/Function_Reference/body_class#Add_Classes_By_Filters
+
+4. Always use esc_url when sanitizing URLs, including WordPress related, also, all home_url() must include a trailing slash such as home_url(‘/‘)
+
+See: https://codex.wordpress.org/Function_Reference/esc_url
+
+5. wp_footer should be placed immediately before body closing tag.
+
+6. Please make sure your theme doesn't raise any errors or warnings with theme-check. http://envato.d.pr/pfIi/1ItSu55N
+
+7. How to test the blog/posts layout/functionality - Import the Theme Unit Test [http://codex.wordpress.org/Theme_Unit_Test] file and make sure that:
+
+- Posts display correctly, with no apparent visual problems or errors.
+- Posts display in correct order.
+- Page navigation displays and works correctly.
+- As "sticky posts" are a core feature, the theme should style and display them appropriately.
+- Lack of body text should not adversely impact the layout.
+- Theme must incorporate both the "Tag" and the "Category" taxonomies in some manner.
+- Floats are cleared properly for floated element (thumbnail image) at the end of the post content.
+
+http://envato.d.pr/1b8Oc/2HMY1VPK
+
+8. The localization file should be in English and delivered as .POT file. .POT will contain all translation strings.
+
+.POT file name should match the themes-slug.
+
+Theme can include an actual translation files, but it should not add the en_US.mo or en_US.po because English already implies.
+
+9. Please use a unique prefix for all function names, custom images sizes, classes, CONSTANTS, hooks, public/global variables, and database entries to avoid conflict issues with plugins and other themes. For example, themename_ OR frameworkname_
+
+- Read more at http://themereview.co/prefix-all-the-things/
+- You can have frameworkname_ if you are using a framework while using themename_ for your themes.
+
+10. Please use get_template_directory when including/requiring files. Example(s) from your code and there are more: http://envato.d.pr/18ZNW/5zl51Jhj
+
+11. Please use the latest version of PrettyPhoto, more info - http://themeforest.net/forums/thread/security-vulnerability-affecting-prettyphoto-jquery-script/181180
+
+12. Please use proper hooks to enqueue any scripts / styles i.e.:
+
+- wp_enqueue_scripts for frontend
+- login_enqueue_scripts for login screen
+- admin_enqueue_scripts for admin dashboard
+
+These hooks should never be used to enqueue files:
+- admin_print_scripts
+- admin_print_styles
+- wp_print_styles
+- init
+- wp_head
+- wp_footer
+
+Example(s) from your code and there are more: http://envato.d.pr/1477C/2Gmnx6ss
+
+13. Directory path should be get_template_directory() and not dirname( FILE ).
+
+14. Please make sure you properly prepare your data for $wpdb.
+
+Please also read
+- http://codex.wordpress.org/Data_Validation#Database
+- http://codex.wordpress.org/Class_Reference/wpdb#Protect_Queries_Against_SQL_Injection_Attacks
+
+15. Data Validation issues have been found in your theme. All dynamic data must be correctly escaped for the context where it is rendered. - All dynamic data must be escaped with esc_attr() before rendered in an html attribute. - Whenever you are rendering a url to the screen its value must be passed through esc_url() first. - If dynamic data is rendered inside an attribute that triggers a JavaScript event, it must be escaped with esc_js().
+
+Please make sure you read these articles:
+https://make.wordpress.org/themes/tags/writing-secure-themes/ http://codex.wordpress.org/Data_Validation http://developer.wordpress.com/themes/escaping/ http://code.tutsplus.com/articles/data-sanitization-and-validation-with-wordpress--wp-25536 https://vip.wordpress.com/documentation/best-practices/security/validating-sanitizing-escaping/
+
+1. Prefix everything and use unique (theme-name-based) consistent slugs. Additional prefix is acceptable for when the author is using a framework.
+
+Avoid using initials or abbreviations.
+
+Here’s a list of the most common things that should be prefixed: PHP function names, PHP class names, PHP global variables, Action/Filter hooks, Script handles, Style handles and Image size names.
+
+Please see: http://themereview.co/prefix-all-the-things/
+
+Use life_coach instead
+
+2. Text domains, slugs and/or prefixes need to be a plain text and not a variable: http://envato.d.pr/1iNNY/OToFnlmw
+
+3. Translate all strings within PHP variable and escape where needed. JS and TGMPA included (when/if used). You need to use a text domain to denote all text belonging to that theme. The text domain is a unique identifier, which makes sure WordPress can distinguish between all loaded translations. This increases portability and plays better with already existing WordPress tools. Any strings within a PHP variable requires to be translated.
+
+https://developer.wordpress.org/themes/functionality/internationalization/
+
+
+1. Don't remove: http://envato.d.pr/13rOx/5j5z6cIV
+
+2. Always use esc_url when sanitizing URLs (in text nodes, attribute nodes or anywhere else). Rejects URLs that do not have one of the provided whitelisted protocols (defaulting to http, https, ftp, ftps, mailto, news, irc, gopher, nntp, feed, and telnet), eliminates invalid characters, and removes dangerous characters.
+
+https://developer.wordpress.org/reference/functions/esc_url/
+
+3. Favicons are now part of WordPress, it's recommended not to include on your own.
+
+https://make.wordpress.org/core/2015/07/27/site-icon/
+
+4. Don’t forget to run Theme Check as well https://wordpress.org/plugins/theme-check/
+
+Leftovers:
+
+1. The link: http://envato.d.pr/1alus/61G6v5BZ displays where comments don't exist.
+
+2. In areas like this: http://envato.d.pr/1cPBG/5m75F1je nothing happens when I click on it.
+
+1. WARNING: .ds_store Hidden Files or Folders found.
+
+2. Your documentation is not sufficient. Please add detailed sections on installation and features navigation with screen shots. Your documentations should explain how to setup the theme similar to the demo without relying on importing the demo content xml.
+
+This is the documentation you included. http://envato.d.pr/1lyD7/4TD5031A
+which is not sufficient. 
+
+1. TGM Plugin Activation is outdated.
+
+2. Revslider is also outdated.
+
+_______
+
+PURE
+
+1. Unfortunately, your submission is too similar to existing item(s) in our marketplace. Your upload must be a unique concept not based on any existing marketplace item.
+
+2. The overall aesthetic quality isn't ready for ThemeForest.
+
+3. The content area is pretty generic and plain, and it will need more imaginations.
+
+4. There are a few inconsistent spacing/padding as well as alignment issues throughout the design. I’d like you to go over it with a fine toothed comb and weed out these basic design issues.
+
+5. The visual flow and hierarchy are weak and confusing. Here are some helpful links:
+
+- http://wordpress.tv/2012/08/26/sara-cannon-designing-for-the-modern-web/
+- http://wordpress.tv/2014/09/05/david-hickox-designing-for-content/
+- http://wordpress.tv/2014/11/02/michael-arestad-visual-hierarchy/
+- http://wordpress.tv/2014/02/06/michelle-schulp-a-website-is-not-a-poster-designing-successfully-for-the-web/
+- http://wordpress.tv/2014/07/01/aaron-jorbin-color-theory-for-web-developers/
+- http://wordpress.tv/2014/11/01/sara-cannon-typography-and-user-experience/
+
+
+
+VIDEOMAG
+
+1. Some of your files contain validation errors that will need to be fixed. Please be sure that all files validate before resubmitting. You can validate HTML at http://validator.w3.org 
+2. Please use a unique prefix for all function names, custom images sizes, classes, hooks, public/global variables, and database entries to avoid conflict issues with plugins and other themes. For example, themename_ OR frameworkname_ OR authorname_themename_ or any other prefix of your choice. - Read more at http://themereview.co/prefix-all-the-things/ - You can still be using frameworkname_ if you are using a framework while using themename_ for your themes. 
+3. Please use get_template_directory when including/requiring files 
+4. http://envato.d.pr/8ujr/5GEgeNry 
+5. Strange styling. http://envato.d.pr/4gwC/6BJ1wjee 
+6. All theme text strings are to be translatable and properly escaped. http://envato.d.pr/1dqUJ/30jh4Ckx http://envato.d.pr/17yVr/11SgE48f 
+7. Please make sure you properly prepare your data for $wpdb, check out the following presentation - http://envato.d.pr/10fDJ/6e9m78Al Please also read - http://codex.wordpress.org/Data_Validation#Database - http://codex.wordpress.org/Class_Reference/wpdb#Protect_Queries_Against_SQL_Injection_Attacks 
+8. Data Validation issues have been found in your theme. All dynamic data must be correctly escaped for the context where it is rendered. - http://codex.wordpress.org/Data_Validation - http://developer.wordpress.com/themes/escaping/ - https://vip.wordpress.com/2014/06/20/the-importance-of-escaping-all-the-things/ We are taking extra precautions with security issues now.
+
+
+ PASHA
+
+
+ THEMEFOREST CHEK FIXES REVIEW
+
+ 1. Site icon is provided by WP 4.3, you can use function_exist('wp_site_icon') for backward compatibility.
+
+ 2. Please provide detailed item description. After editing, click save, resubmit. More info - https://help.market.envato.com/hc/en-us/articles/203039204-Tips-for-Excellent-Titles-Descriptions-and-Tags
+
+ 3. Scripts and styles should not be hardcoded anywhere in your theme or added any other way but with wp_enqueue_* hook and to be added from the functions file. This includes custom JS/CSS.
+
+    For inline styles use: https://developer.wordpress.org/reference/functions/wp_add_inline_style/ and for scripts https://developer.wordpress.org/reference/functions/wp_add_inline_script/
+
+ 5. You should avoid and not to hardcode custom body_class(). Main reason for this is being able to remove the class when needed i.e. child themes.
+    What you can do - https://gist.github.com/kailoon/d4d22c9204909dff21eb
+
+    ref: http://themeshaper.com/2014/11/20/mastering-the-post_class-function/ https://codex.wordpress.org/Function_Reference/body_class#Add_Classes_By_Filters
+
+ 6. Always use esc_url when sanitizing URLs, including WordPress related, also, all home_url() must include a trailing slash such as home_url('/')
+
+    See: https://codex.wordpress.org/Function_Reference/esc_url
+
+ 7. Please make sure your theme doesn't raise any errors or warnings with theme-check. http://envato.d.pr/1djdr/2gvt4VHW
+
+ 8. Please make sure you are providing the latest version of the plugins
+
+ 9. Please update the TGM Plugin Activation to the latest version, which fixes the security flaw - https://github.com/TGMPA/TGM-Plugin-Activation/releases
+
+ 10. Please use get_template_directory when including/requiring files. Example(s) from your code and there are more: http://envato.d.pr/1hkhU/19SAy1fH
+
+ 12. Page title is missing http://envato.d.pr/1jiLK/2mllnZBk
+
+ 14. Directory path should be get_template_directory() and not dirname( FILE ).
+
+ 15. Please make sure you properly prepare your data for $wpdb.
+
+     Please also read
+     - http://codex.wordpress.org/Data_Validation#Database
+     - http://codex.wordpress.org/Class_Reference/wpdb#Protect_Queries_Against_SQL_Injection_Attacks
+
+ 17. Please use a unique prefix for all function names, custom images sizes, classes, CONSTANTS, hooks, public/global variables,
+     and database entries to avoid conflict issues with plugins and other themes. For example, themename OR frameworkname
+
+     - Read more at http://themereview.co/prefix-all-the-things/
+     - You can have frameworkname if you are using a framework while using themename for your themes
+
+ 22. flush_widget_cache() found in the file inc/widgets/widget-woo-categories/widget-woo-categories.php. Deprecated since version 4.4.
+
+ 25. The localization file should be in English and delivered as .POT file. .POT will contain all translation strings.
+
+     .POT file name should match the themes-slug.
+
+     Theme can include an actual translation files, but it should not add the en_US.mo or en_US.po because English already implies.
+
+ 30. Text domains should be theme-name-based and unique to this theme only. Don't define or use variables. The text domain name must use dashes and not underscores.
+
+     See: https://developer.wordpress.org/themes/functionality/internationalization/#text-domains
+
+ 31. Data Validation issues have been found in your theme. All dynamic data must be correctly escaped for the context where it is rendered. - All dynamic data must be escaped with esc_attr() before rendered in an html attribute.
+     - Whenever you are rendering a url to the screen its value must be passed through esc_url() first. - If dynamic data is rendered inside an attribute that triggers a JavaScript event, it must be escaped with esc_js().
+
+     Please make sure you read these articles:
+     https://make.wordpress.org/themes/tags/writing-secure-themes/ http://codex.wordpress.org/Data_Validation http://developer.wordpress.com/themes/escaping/
+     http://code.tutsplus.com/articles/data-sanitization-and-validation-with-wordpress--wp-25536 https://vip.wordpress.com/documentation/best-practices/security/validating-sanitizing-escaping/
+
+ 33. This is not something that a theme should be doing: http://envato.d.pr/13MJm/4xbnedxo And it's also unnecessary: https://make.wordpress.org/core/2015/07/06/comments-are-now-turned-off-on-pages-by-default/
+
+ 34. Ordered lists aren't displaying correctly: http://envato.d.pr/10NrB/2lSjYUEz
+
+ 35. Logins, registration etc is a plugin-territory functionality: http://envato.d.pr/8RqX/19wU1ehB
+
+ 37. Translate all strings within PHP variable and escape where needed. JS and TGMPA included (when/if used). You need to use a text domain to denote all text belonging to that theme.
+     The text domain is a unique identifier, which makes sure WordPress can distinguish between all loaded translations. This increases portability and plays better with already existing WordPress tools.
+     Any strings within a PHP variable requires to be translated.
+
+     http://www.carriedils.com/wordpress-i18n/
+
+     https://developer.wordpress.org/themes/functionality/internationalization/
+
+     - http://envato.d.pr/tEgX/5nzAJqXr
+
+     - http://envato.d.pr/1aaJc/txymdMJj
+
+ 38. Please don't remove core styles: http://envato.d.pr/18L3V/49F1eTlP
+
+ 38. Don't hardcode HTTP protocol: http://envato.d.pr/bqKv/2QCiXc54
+
+ 40. Slugs, prefixing and text domains should not be a variable, please use a plain text instead.
+
+     http://envato.d.pr/134Fk/3uDDAZLd
+
+ 43. To avoid double loading, don't prefix third-party scripts and styles.
+
+     Good: http://envato.d.pr/GSHc/3QuCG8eW
+
+     Not Good: http://envato.d.pr/18sjk/4AzsgXbs
+
+ 44. Remove HTTP protocol: http://envato.d.pr/17I6x/1FL7QbyW otherwise HTTPS users will have issues.
+
+ 45. Theme needs to properly load files, but also to be consistent as well.
+
+     There are several functions available for getting the path:
+
+     - get_template_directory - Filter the current theme directory path.
+
+     - get_template_directory_uri - Filter the current theme directory URI.
+
+     - get_stylesheet_directory - Filter the stylesheet directory path for current theme.
+
+     - get_stylesheet_directory_uri - Filter the stylesheet directory URI.
+
+     http://justintadlock.com/archives/2010/11/17/how-to-load-files-within-wordpress-themes
+
+     http://envato.d.pr/177Ug/4oDcfErg
+
+ 47. Screenshot size should be 1200x900, to account for HiDPI displays. Any 4:3 image size is acceptable, but 1200x900 is preferred. http://envato.d.pr/XTrc
+
+ 48. Please make sure your theme doesn't raise any errors or warnings with theme-check. http://envato.d.pr/1kD9Q
+
+ 49. No image placeholders, if user doesn't want an image, nothing should display. Theme still needs to work properly without them. http://envato.d.pr/k6CM
+
+ 50. Please make sure that your template doesn't raise any PHP errors, notices or warnings. Enabling wp_debug can help you with this. http://envato.d.pr/K2b3
+
+     Note: The screenshots above are examples. There may be more issues that are similar. Make sure to check all files and fix all instances of each issue before resubmitting. Not fixing the issues or fixing them partially will delay your final approval.
+
+ 51. It's recommended that your item supports at least PHP5.4, as many WordPress users are on old versions of PHP (https://wordpress.org/about/stats/). If you do not support older versions of PHP your item may get bad ratings and refund requests from buyers.
+
+
+EAZYY
+"Some of your files contain validation errors that will need to be fixed.
+Please be sure that all files validate before resubmitting.
+
+Validated HTML at http://validator.w3.org
+"
+"Please use a unique prefix for all function names, custom images sizes, classes, hooks, public/global variables,
+and database entries to avoid conflict issues with plugins and other themes.
+For example, themename OR frameworkname OR authorname_themename_ or any other prefix of your choice.
+- Read more at  http://themereview.co/prefix-all-the-things/
+"
+"Used get_template_directory when including/requiring files
+"
+"All theme text strings are to be translatable and properly escaped
+"
+"It looks like internationalized text strings are not being escaped:
+
+        __( 'String', ‘text-domain’ );
+        _e( 'String', ‘text-domain’ );
+
+UPDATE your theme to use the following:
+
+No HTML:
+
+        esc_html__( 'String', 'text-domain' );
+        esc_html_e( 'String', ’text-domain' );
+
+Some HTML:
+
+        wp_kses( __( 'String <strong>something</strong>', 'text-domain' ), $allowed_html_array );
+
+It's possible for translators to sneak HTML and JS into translation files or even just inadvertently mess something up. So, it's good practice to simply escape them.
+"
+"Properly prepared data for $wpdb
+
+Please also read
+- http://codex.wordpress.org/Data_Validation#Database
+- http://codex.wordpress.org/Class_Reference/wpdb#Protect_Queries_Against_SQL_Injection_Attacks
+"
+"All dynamic datacorrectly escaped for the context where it is rendered
+"
+"Data Validation issues have been found in your theme.
+All dynamic data must be correctly escaped for the context where it is rendered.
+
+- http://codex.wordpress.org/Data_Validation
+- http://developer.wordpress.com/themes/escaping/
+- https://vip.wordpress.com/2014/06/20/the-importance-of-escaping-all-the-things/
+
+We are taking extra precautions with security issues now.
+Please perform a global search for ""echo $"" and escape ALL outputs.
+This will help ensure there are no security issues.
+"
+
+"http://envato.d.pr/1k0kF/sWpQsmsw [ get_template_directory_uri ]
+
+Please use wp_enqueue to load any external scripts/stylesheet - wp_enqueue_script / wp_enqueue_style
+http://codex.wordpress.org/Function_Reference/wp_enqueue_script#Functions
+"
+"Scripts and styles should not be hardcoded anywhere in your theme or added any other way but with wp_enqueue_* hook and to be added from the functions file.
+This includes custom JS/CSS.
+
+For inline styles use:
+https://developer.wordpress.org/reference/functions/wp_add_inline_style/
+
+and for scripts
+https://developer.wordpress.org/reference/functions/wp_add_inline_script/
+
+Example(s) from your code and there are more: http://envato.d.pr/1esf7/2y01u229
+"
+"You should avoid and not to hardcode custom body_class().
+Main reason for this is being able to remove the class when needed i.e. child themes.
+What you can do - https://gist.github.com/kailoon/d4d22c9204909dff21eb
+
+ref:
+http://themeshaper.com/2014/11/20/mastering-the-post_class-function/
+https://codex.wordpress.org/Function_Reference/body_class#Add_Classes_By_Filters
+"
+"Always use esc_url when sanitizing URLs, including WordPress related, also, all home_url() must include a trailing slash such as home_url('/')
+
+See: https://codex.wordpress.org/Function_Reference/esc_url
+"
+"wp_footer should be placed immediately before body closing tag.
+"
+"Please make sure your theme doesn't raise any errors or warnings with theme-check.
+http://envato.d.pr/pfIi/1ItSu55N
+"
+"How to test the blog/posts layout/functionality
+
+Import the Theme Unit Test [http://codex.wordpress.org/Theme_Unit_Test] file and make sure that:
+
+- Posts display correctly, with no apparent visual problems or errors.
+- Posts display in correct order.
+- Page navigation displays and works correctly.
+- As ""sticky posts"" are a core feature, the theme should style and display them appropriately.
+- Lack of body text should not adversely impact the layout.
+- Theme must incorporate both the ""Tag"" and the ""Category"" taxonomies in some manner.
+- Floats are cleared properly for floated element (thumbnail image) at the end of the post content.
+
+http://envato.d.pr/1b8Oc/2HMY1VPK
+"
+"The localization file should be in English and delivered as .POT file.
+.POT will contain all translation strings.
+
+.POT file name should match the themes-slug.
+
+Theme can include an actual translation files, but it should not add the en_US.mo or en_US.po because English already implies.
+"
+"Please use a unique prefix for all function names, custom images sizes, classes, CONSTANTS, hooks, public/global variables,
+and database entries to avoid conflict issues with plugins and other themes. For example, themename OR frameworkname
+
+- Read more at http://themereview.co/prefix-all-the-things/
+- You can have frameworkname if you are using a framework while using themename for your themes.
+"
+"Please use get_template_directory when including/requiring files.
+Example(s) from your code and there are more: http://envato.d.pr/18ZNW/5zl51Jhj
+"
+"Please use the latest version of PrettyPhoto,
+more info - http://themeforest.net/forums/thread/security-vulnerability-affecting-prettyphoto-jquery-script/181180
+"
+"Please use proper hooks to enqueue any scripts / styles i.e.:
+
+- wp_enqueue_scripts for frontend
+- login_enqueue_scripts for login screen
+- admin_enqueue_scripts for admin dashboard
+
+These hooks should never be used to enqueue files:
+- admin_print_scripts
+- admin_print_styles
+- wp_print_styles
+- init
+- wp_head
+- wp_footer
+
+Example(s) from your code and there are more: http://envato.d.pr/1477C/2Gmnx6ss
+"
+"Directory path should be get_template_directory() and not dirname( FILE ).
+"
+"Please make sure you properly prepare your data for $wpdb.
+
+Please also read
+- http://codex.wordpress.org/Data_Validation#Database
+- http://codex.wordpress.org/Class_Reference/wpdb#Protect_Queries_Against_SQL_Injection_Attacks
+"
+"Data Validation issues have been found in your theme. All dynamic data must be correctly escaped for the context where it is rendered.
+- All dynamic data must be escaped with esc_attr() before rendered in an html attribute.
+- Whenever you are rendering a url to the screen its value must be passed through esc_url() first.
+- If dynamic data is rendered inside an attribute that triggers a JavaScript event, it must be escaped with esc_js().
+
+Please make sure you read these articles:
+https://make.wordpress.org/themes/tags/writing-secure-themes/
+http://codex.wordpress.org/Data_Validation
+http://developer.wordpress.com/themes/escaping/
+http://code.tutsplus.com/articles/data-sanitization-and-validation-with-wordpress--wp-25536
+https://vip.wordpress.com/documentation/best-practices/security/validating-sanitizing-escaping/
+"
+"Prefix everything and use unique (theme-name-based) consistent slugs. Additional prefix is acceptable for when the author is using a framework.
+
+Avoid using initials or abbreviations.
+
+Here's a list of the most common things that should be prefixed: PHP function names, PHP class names,
+PHP global variables, Action/Filter hooks, Script handles, Style handles and Image size names.
+
+Please see: http://themereview.co/prefix-all-the-things/
+
+Use life_coach instead
+"
+"Text domains, slugs and/or prefixes need to be a plain text and not a variable: http://envato.d.pr/1iNNY/OToFnlmw
+"
+"Translate all strings within PHP variable and escape where needed. JS and TGMPA included (when/if used).
+You need to use a text domain to denote all text belonging to that theme. The text domain is a unique identifier,
+which makes sure WordPress can distinguish between all loaded translations.
+This increases portability and plays better with already existing WordPress tools.
+Any strings within a PHP variable requires to be translated.
+
+https://developer.wordpress.org/themes/functionality/internationalization/
+"
+"Don't remove: http://envato.d.pr/13rOx/5j5z6cIV
+"
+"Always use esc_url when sanitizing URLs (in text nodes, attribute nodes or anywhere else).
+Rejects URLs that do not have one of the provided whitelisted protocols (defaulting to http, https, ftp, ftps, mailto, news, irc, gopher, nntp, feed, and telnet),
+eliminates invalid characters, and removes dangerous characters.
+
+https://developer.wordpress.org/reference/functions/esc_url/
+"
+"Favicons are now part of WordPress, it's recommended not to include on your own.
+
+https://make.wordpress.org/core/2015/07/27/site-icon/
+"
+"Don't forget to run Theme Check as well https://wordpress.org/plugins/theme-check/
+
+Please check everything carefully, not fixing the issues or fixing them partially will delay your final approval.
+"
+"The link: http://envato.d.pr/1alus/61G6v5BZ displays where comments don't exist.
+"
+"In areas like this: http://envato.d.pr/1cPBG/5m75F1je nothing happens when I click on it.
+"
+"Your demo has issues. http://envato.d.pr/LTx9/2mzaepHN
+"
+"Some of your files contain validation errors that will need to be fixed. Please be sure that all files validate before resubmitting.
+You can validate HTML at http://validator.w3.org
+"
+"Remove commented code.
+"
+"wp_footer should be placed immediately before body closing tag.
+"
+"WARNING: .htaccess Hidden Files or Folders found.
+"
+"http://envato.d.pr/1bSjt/28WMvZYT
+"
+"http://envato.d.pr/1hyta/1cCtx8Gd
+"
+"How to test the blog/posts layout/functionality - Import the Theme Unit Test [http://codex.wordpress.org/Theme_Unit_Test] file and make sure that:
+
+- Posts display correctly, with no apparent visual problems or errors.
+- Posts display in correct order.
+- Page navigation displays and works correctly.
+- As ""sticky posts"" are a core feature, the theme should style and display them appropriately.
+- Lack of body text should not adversely impact the layout.
+- Theme must incorporate both the ""Tag"" and the ""Category"" taxonomies in some manner.
+- Floats are cleared properly for floated element (thumbnail image) at the end of the post content.
+
+Reference link: https://wpthemetestdata.wordpress.com/
+"
+"Theme options do not work. http://envato.d.pr/1hyta/1cCtx8Gd - http://envato.d.pr/ASdg/eJW67kTX
+"
+"All theme text strings are to be translatable and properly escaped.
+
+http://envato.d.pr/1dqUJ/30jh4Ckx
+"
+"Delete this. http://envato.d.pr/1hTSC/5AaChpan
+"
+"WARNING: .ds_store Hidden Files or Folders found.
+"
+"TGM Plugin Activation is outdated.
+"
+"Revslider is also outdated.
+"
+
+"Some of your files contain validation errors that will need to be fixed. Please be sure that all files validate before resubmitting.
+You can validate HTML at http://validator.w3.org
+"
+"remove thumbnail and preview from the download http://envato.d.pr/19frD/5ErtNeOQ
+"
+"Please use wp_enqueue to load any external scripts/stylesheet - wp_enqueue_script / wp_enqueue_style - http://codex.wordpress.org/Function_Reference/wp_enqueue_script#Functions
+Example(s) from your code and there are more: http://envato.d.pr/13Lss/4t6UytBx
+
+Please use proper hooks to enqueue any scripts / styles i.e.:
+
+- wp_enqueue_scripts for frontend
+- login_enqueue_scripts for login screen
+- admin_enqueue_scripts for admin dashboard
+
+These hooks should never be used to enqueue files:
+- admin_print_scripts
+- admin_print_styles
+- wp_print_styles
+- init
+- wp_head
+- wp_footer
+
+Example(s) from your code and there are more: http://envato.d.pr/1477C/2Gmnx6ss
+"
+"Site icon is provided by WP 4.3, you can use function_exist('wp_site_icon') for backward compatibility.
+Проверить
+"
+"Scripts and styles should not be hardcoded anywhere in your theme or added any other way but with wp_enqueue_* hook and to be added from the functions file. This includes custom JS/CSS.
+
+For inline styles use: https://developer.wordpress.org/reference/functions/wp_add_inline_style/ and for scripts https://developer.wordpress.org/reference/functions/wp_add_inline_script/
+
+Example(s) from your code and there are more: http://envato.d.pr/8VfH/1xX5BB1Q
+"
+"Please make sure your theme doesn't raise any errors or warnings with theme-check. http://envato.d.pr/1eReJ/5FhWvivZ
+"
+"No image placeholders, if user doesn't want an image, nothing should display. Theme still needs to work properly without them:
+"
+"Styling issue http://envato.d.pr/1i8lb/4irEtNTJ
+"
+"Cut off? http://envato.d.pr/11YX8/5NZTKs7E
+"
+"Woocommerce styling is broken http://envato.d.pr/1fTmG/3wvgWMtp
+"
+"You should avoid and not to hardcode custom body_class(). Main reason for this is being able to remove the class when needed i.e. child themes. What you can do - https://gist.github.com/kailoon/d4d22c9204909dff21eb
+
+ref: http://themeshaper.com/2014/11/20/mastering-the-post_class-function/ https://codex.wordpress.org/Function_Reference/body_class#Add_Classes_By_Filters
+"
+" Data Validation issues have been found in your theme. All dynamic data must be correctly escaped for the context where it is rendered. - All dynamic data must be escaped with esc_attr() before rendered in an html attribute. - Whenever you are rendering a url to the screen its value must be passed through esc_url() first. - If dynamic data is rendered inside an attribute that triggers a JavaScript event, it must be escaped with esc_js().
+
+Please make sure you read these articles:
+https://make.wordpress.org/themes/tags/writing-secure-themes/ http://codex.wordpress.org/Data_Validation http://developer.wordpress.com/themes/escaping/ http://code.tutsplus.com/articles/data-sanitization-and-validation-with-wordpress--wp-25536 https://vip.wordpress.com/documentation/best-practices/security/validating-sanitizing-escaping/
+"
+"Always use esc_url when sanitizing URLs, including WordPress related, also, all home_url() must include a trailing slash such as home_url('/')
+
+See: https://codex.wordpress.org/Function_Reference/esc_url
+"
+"Please use a unique prefix for all function names, custom images sizes, classes, CONSTANTS, hooks, public/global variables, and database entries to avoid conflict issues with plugins and other themes. For example, themename OR frameworkname
+do_action
+apply_filters
+- Read more at http://themereview.co/prefix-all-the-things/
+- You can have frameworkname if you are using a framework while using themename for your themes.
+"
+"Please use the latest version of PrettyPhoto, more info - http://themeforest.net/forums/thread/security-vulnerability-affecting-prettyphoto-jquery-script/181180
+deleted all from theme
+"
+"Please use proper hooks to enqueue any scripts / styles i.e.:
+
+- wp_enqueue_scripts for frontend
+- login_enqueue_scripts for login screen
+- admin_enqueue_scripts for admin dashboard
+
+These hooks should never be used to enqueue files:
+- admin_print_scripts
+- admin_print_styles
+- wp_print_styles
+- init
+- wp_head
+- wp_footer
+"
+"Directory path should be get_template_directory() and not dirname( FILE ).
+"
+"Please remove http://envato.d.pr/8Jt1/3wtyYKuY
+"
+"Please make sure you are providing the latest version of the plugins
+"
+"Slugs, prefixing and text domains should not be a variable, please use a plain text instead.
+"
+"Translate all strings within PHP variable and escape where needed. JS and TGMPA included (when/if used). You need to use a text domain to denote all text belonging to that theme. The text domain is a unique identifier, which makes sure WordPress can distinguish between all loaded translations. This increases portability and plays better with already existing WordPress tools. Any strings within a PHP variable requires to be translated.
+
+https://developer.wordpress.org/themes/functionality/internationalization/
+
+http://envato.d.pr/jdDX/5f2IT5fF
+"
+"Theme doesn't load files properly here: http://envato.d.pr/13CJS/5O00scyV
+
+There are several functions available for getting the path:
+
+- get_template_directory - Filter the current theme directory path.
+
+- get_template_directory_uri - Filter the current theme directory URI.
+
+- get_stylesheet_directory - Filter the stylesheet directory path for current theme.
+
+- get_stylesheet_directory_uri - Filter the stylesheet directory URI.
+
+http://justintadlock.com/archives/2010/11/17/how-to-load-files-within-wordpress-themes
+"
+"Instagram Feed is outdated.
+"
+"AccessPress Social Counter is also outdated.
+"
+"Essential Grid is outdated too.
+"
+"Tiled Galleries Carousel Without Jetpack also outdated.
+"
+"Please go over your codes in details and make sure that nothing else stays outdated.
+"

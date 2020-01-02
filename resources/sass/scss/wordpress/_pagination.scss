@@ -1,0 +1,89 @@
+/*
+** WordPress Page Links and Pagination
+*/
+.page-item,
+.nav-links,
+.page-links {
+  clear: both;
+  & > span,
+  & > a {
+    border: 1px solid #e6e6e6;
+    border-radius: 50px;
+    color: #808080;
+    background-color: transparent;
+    display: inline-block;
+    margin-right: 6px;
+    margin-left: 0;
+    padding: 9px 21px;
+    min-width: 3em;
+    text-align: center;
+    line-height: inherit;
+    font-size: 14px;
+    &:hover {
+      background-color: $colorMain;
+      color: $lightColor;
+    }
+  }
+  &.active > a,
+  & > span {
+    border-color: $colorMain; 
+    color: #fff;
+    background-color: $colorMain !important;
+    cursor: not-allowed;
+  }
+  .fa {
+    font-size: 14px;
+  }
+}
+
+//page and comments links smaller
+.comments-pagination,
+.page-links {
+  .page-numbers,
+  & > span,
+  a {
+    //min-width: 2em;
+  }
+}
+
+.page-links a:first-child {
+  margin-left: 1em;
+}
+
+//blog styles
+.pagination {
+  margin-top: 30px;
+  justify-content: flex-start;
+}
+
+//blog post
+.post-nav.nav-links {
+  margin: 60px 0;
+    .nav-previous, .nav-next {
+      padding: 52px 40px;
+      text-align: right;
+      transition: 0.2s opacity ease;
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+    .nav-title {
+      display: block;
+    }
+    a {
+      @include cover();
+    }
+  .post-nav-image {
+    display: none;
+  }
+  .cover-image {
+    border-radius: 5px;
+    position: inherit;
+    .post-nav-text-wrap {
+      text-align: center;
+    }
+  }
+  .s-overlay.ds:before {
+    border-radius: 5px;
+  }
+}

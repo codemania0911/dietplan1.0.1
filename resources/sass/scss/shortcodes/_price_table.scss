@@ -1,0 +1,87 @@
+.pricing-plan {
+  text-align: center;
+  padding: 40px 40px 10px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  @media(max-width: 991px) {
+    margin: 0 0 70px; 
+  }
+
+  .price-wrap {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    font-size: 20px;
+    line-height: 0.7;
+    margin: 63px 0 10px;
+
+    &[class*='bg-'] {
+      padding: 30px 30px 10px;
+      margin-top: 50px;
+      margin-bottom: 0;
+    }
+    .plan-price {
+      font-size: 62px;
+      font-weight: 500;
+    }
+  }
+  [class*='bg-'] {
+    padding: 10px 30px 30px;
+    margin-left: -41px;
+    margin-right: -41px;
+  }
+  .plan-name {
+    &[class*='bg-'] {
+      padding-top: 30px;
+      margin-top: -40px;
+    }
+    h3 {
+      font-size: 20px;
+      letter-spacing: 0.2em;
+      line-height: 1;
+    }
+  }
+
+  @media(min-width: 1200px) {
+    padding: 57px 60px 10px;
+    [class*='bg-'] {
+      margin-left: -61px;
+      margin-right: -61px;
+    }
+    .plan-name[class*='bg-'] {
+      margin-top: -57px;
+    }
+  }
+
+  .plan-features {
+    margin: 47px 0 20px;
+  }
+
+  .plan-button {
+    position: relative;
+    top: 38px;
+  }
+
+  //featured border
+  &.plan-featured {
+    border: 5px solid $colorMain2;
+    transform: translateY(-30px);
+    @media(max-width: 991px) {
+      transform: translateY(0px);
+    }
+    .plan-button {
+      top: 38px;
+    }
+  }
+  &.with-bg {
+    .plan-name {
+      margin-top: 2px;
+    }
+  }
+}
+
+.pricing-plan.layout-2 {
+  border-color: $colorMain2;
+}
+

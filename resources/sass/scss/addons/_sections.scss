@@ -1,0 +1,767 @@
+/*
+** Common Sections Styles
+*/
+section {
+  position: relative;
+}
+
+//for cover-image
+img {
+  max-width: 100%;
+  border-radius: 5px 5px 0 0;
+
+}
+
+/*parallax*/
+
+.s-parallax,
+.cover-image,
+.cover-background,
+.texture-background {
+
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+
+  position: relative;
+
+}
+
+.cover-image {
+
+  //horizontal scroll with side header appears on sections.
+  //Go to .cover-image only
+  width: 100%;
+  height: 100%;
+
+}
+
+//background cover abstract texture
+.texture-background {
+  background-image: url(../img/background-texture-cover#{$styleNumber}.jpg);
+}
+
+//background pattern
+//.pattern-background,
+.pattern-background:before {
+  background-image: url(../img/patterns/pattern8.png);
+}
+
+//cover image takes img tag and set it as a background with cover size
+.cover-image {
+  @media(min-width: 768px) {
+    display: block;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-position: 50% 50%;
+    z-index: 2;
+
+    &.s-cover-right {
+      width: 50%;
+      left: auto;
+    }
+    &.s-cover-left {
+      width: 50%;
+    }
+    & > img {
+      visibility: hidden;
+    }
+
+    & > a {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+    }
+
+    //hiding real image in onehalf image/text section
+    & + [class*='container'] [class*='col-'] > img,
+    & + [class*='container'] [class*='col-'] > a:after,
+    & + [class*='container'] [class*='col-'] > a > img {
+      visibility: hidden;
+    }
+  }
+}
+
+.fixed-background,
+.s-parallax {
+  background-attachment: fixed;
+  background-position: 50% 0;
+}
+
+@media (max-width: 767px) {
+  .s-parallax {
+    -webkit-background-size: auto auto;
+    -moz-background-size: auto auto;
+    -o-background-size: auto auto;
+    background-size: auto auto;
+  }
+}
+
+/*additional overlay for parallax sections*/
+
+// if you need an overlay on parallax section, add a class .s-overlay
+// and it will add semitransparent overlay with background color
+// depending from main section background class
+.s-overlay:before {
+  opacity: 0.8;
+}
+
+.s-overlay.ls:before {
+  background-color: $lightColor;
+  opacity: 0.93;
+}
+
+.s-overlay.ls.ms:before {
+  background-color: $greyColor;
+  opacity: 0.81;
+}
+
+.s-overlay.cs:before {
+  background-color: $colorMain;
+  opacity: 0.1;
+}
+
+.s-overlay.cs.cs2:before {
+  background-color: $colorMain2;
+}
+
+.s-overlay.cs.cs3:before {
+  background-color: $colorMain3;
+}
+
+.s-overlay.ds:before {
+  background-color: #20252b;
+  opacity: 0.7;
+}
+
+.s-overlay.ds.ms:before {
+  opacity: 0.90;
+}
+
+.s-muted:before {
+  background-color: rgba($darkgreyColor, 0.1);
+  opacity: 1;
+}
+
+.gradientradial-background {
+  overflow: hidden;
+}
+
+.s-parallax > *,
+.s-overlay > *,
+.s-muted > *,
+.s-overlay-diagonal-double > *,
+.pattern-background > *,
+.gradientradial-background > *,
+.gradient-background > *,
+.gradientvertical-background > *,
+.gradientdarken-background > * {
+  z-index: 4;
+  position: relative;
+}
+
+.s-parallax:before,
+.s-overlay:before,
+.s-muted:before,
+.s-overlay-diagonal-double:before,
+.s-overlay-diagonal-double:after,
+.pattern-background:before,
+.gradient-background:before,
+.gradientvertical-background:before,
+.gradientdarken-background:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.s-muted:before,
+.s-parallax:before {
+  opacity: 0.8;
+}
+
+//diagonal overlay. Used only with .s-overlay class
+.s-overlay-diagonal {
+  overflow: hidden;
+  padding: 10px 0;
+  background-clip: content-box;
+  &:before {
+    width: 40%;
+    height: 3000px;
+    margin-left: 30%;
+    top: 50%;
+    left: 0;
+    right: auto;
+    bottom: auto;
+    transform: translateY(-50%) rotate(-45deg);
+    @media(max-width: 1200px) {
+      width: 70%;
+      margin-left: 15%;
+    }
+  }
+}
+
+.s-overlay-diagonal-double {
+  overflow: hidden;
+  padding: 10px 0;
+  &:before {
+    background: linear-gradient(45deg, $colorMain 30%, transparent 30%);
+    opacity: 0.6;
+  }
+  &:after {
+    background: linear-gradient(45deg, transparent 70%, $colorMain 70%);
+    opacity: 0.6;
+  }
+}
+
+.gradient-background:before {
+
+  background: $colorMain;
+  background: -moz-linear-gradient(left, rgba($colorMain, 1) 0%, rgba($colorMain2, 1) 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba($colorMain, 1)), color-stop(100%, rgba($colorMain2, 1)));
+  background: -webkit-linear-gradient(left, rgba($colorMain, 1) 0%, rgba($colorMain2, 1) 100%);
+  background: -o-linear-gradient(left, rgba($colorMain, 1) 0%, rgba($colorMain2, 1) 100%);
+  background: -ms-linear-gradient(left, rgba($colorMain, 1) 0%, rgba($colorMain2, 1) 100%);
+  background: linear-gradient(to right, rgba($colorMain, 1) 0%, rgba($colorMain2, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$colorMain', endColorstr='$colorMain2', GradientType=1);
+}
+
+.gradientvertical-background:before {
+  background: $colorMain; /* Old browsers */
+  background: -moz-linear-gradient(top, rgba($colorMain, 1) 0%, rgba($colorMain2, 1) 100%);
+  background: -webkit-linear-gradient(top, rgba($colorMain, 1) 0%, rgba($colorMain2, 1) 100%);
+  background: -o-linear-gradient(top, rgba($colorMain, 1) 0%, rgba($colorMain2, 1) 100%);
+  background: -ms-linear-gradient(top, rgba($colorMain, 1) 0%, rgba($colorMain2, 1) 100%);
+  background: linear-gradient(to bottom, rgba($colorMain, 1) 0%, rgba($colorMain2, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$colorMain', endColorstr='$colorMain2', GradientType=0);
+}
+
+.gradientdarken-background:before {
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 100%);
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 100%);
+  background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 100%);
+  background: -ms-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 100%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#00000000', GradientType=0);
+
+}
+
+//white circle as a background
+.gradientradial-background:before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 1400px;
+  height: 1400px;
+  top: 50%;
+  left: 50%;
+  margin-top: -700px;
+  margin-left: -700px;
+  z-index: 2;
+
+  background: -moz-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 0.24) 0%, rgba(255, 255, 255, 0) 50%); /* FF3.6+ */
+  background: -webkit-gradient(radial, center center, 0, center center, 50%, color-stop(0%, rgba(255, 255, 255, 0.24)), color-stop(50%, rgba(255, 255, 255, 0))); /* Chrome,Safari4+ */
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 0.24) 0%, rgba(255, 255, 255, 0) 50%); /* Chrome10+,Safari5.1+ */
+  background: -o-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 0.24) 0%, rgba(255, 255, 255, 0) 50%); /* Opera 12+ */
+  background: -ms-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 0.24) 0%, rgba(255, 255, 255, 0) 50%); /* IE10+ */
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.24) 0%, rgba(255, 255, 255, 0) 50%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#33ffffff', endColorstr='#00ffffff', GradientType=1); /* IE6-9 fallback on horizontal gradient */
+
+}
+
+//overlay with radial gradient
+.s-overlay.gradientradial-background:before {
+  width: 100vw;
+  height: 100vw;
+  margin-top: -50vw;
+  margin-left: -50vw;
+
+}
+
+.s-bordertop,
+.s-borderbottom,
+.s-bordertop-container .container,
+.s-borderbottom-container .container {
+  position: relative;
+}
+
+.s-bordertop:before,
+.s-borderbottom:after,
+.s-bordertop-container .container:before,
+.s-borderbottom-container .container:after {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 1px;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: $borderColor;
+  z-index: 1;
+}
+
+//various border height
+@each $value in $section-borders-height {
+  .s-borderheight-#{$value}:before,
+  .s-borderheight-#{$value}:after,
+  .s-borderheight-#{$value} .container:before,
+  .s-borderheight-#{$value} .container:after {
+    height: #{$value}px;
+  }
+}
+
+.s-bordercolormain:before,
+.s-bordercolormain:after,
+.s-bordercolormain .container:before,
+.s-bordercolormain .container:after {
+  background-color: $colorMain;
+}
+
+.s-bordertop-container .container:before,
+.s-borderbottom-container .container:after {
+  //gap 15px
+  right: 15px;
+  left: 15px;
+}
+
+.s-borderbottom:after,
+.s-borderbottom-container .container:after {
+  top: auto;
+  bottom: 0;
+}
+
+.s-bordered-columns {
+  [class*='col-'] + [class*='col-']:before {
+    content: '';
+    position: absolute;
+    top: 1em;
+    bottom: 1em;
+    left: 0;
+    width: 1px;
+    background-color: $borderColorRGBA;
+  }
+}
+
+/*page preloader*/
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1100;
+  background-color: #ffde6b;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  h1 {
+    position: relative;
+    text-transform: uppercase;
+    margin: 0 auto;
+    top: 25vh;
+    width: 100vw;
+    text-align: center;
+    font-size: 40px;
+    color: #20252b;
+    opacity: .75;
+    animation: pulse 2.5s linear infinite;
+  }
+  #cooking {
+    position: relative;
+    margin: 0 auto;
+    top: 0;
+    width: 75vh;
+    height: 75vh;
+    overflow: hidden;
+    @media (max-width: 767px) {
+      right: 93px;
+    }
+    .bubble {
+      position: absolute;
+      border-radius: 100%;
+      box-shadow: 0 0 .25vh lighten(#20252b, 10%);
+      opacity: 0;
+    }
+    .bubble:nth-child(1) {
+      margin-top: 2.5vh;
+      left: 58%;
+      width: 2.5vh;
+      height: 2.5vh;
+      background-color: lighten(#20252b, 7%);
+      animation: bubble 2s cubic-bezier(.53, .16, .39, .96) infinite;
+    }
+    .bubble:nth-child(2) {
+      margin-top: 3vh;
+      left: 52%;
+      width: 2vh;
+      height: 2vh;
+      background-color: lighten(#20252b, 4%);
+      animation: bubble 2s ease-in-out .35s infinite;
+    }
+    .bubble:nth-child(3) {
+      margin-top: 1.8vh;
+      left: 50%;
+      width: 1.5vh;
+      height: 1.5vh;
+      background-color: #20252b;
+      animation: bubble 1.5s cubic-bezier(.53, .16, .39, .96) .55s infinite;
+    }
+    .bubble:nth-child(4) {
+      margin-top: 2.7vh;
+      left: 56%;
+      width: 1.2vh;
+      height: 1.2vh;
+      background-color: darken(#20252b, 3%);
+      animation: bubble 1.8s cubic-bezier(.53, .16, .39, .96) .9s infinite;
+    }
+    .bubble:nth-child(5) {
+      margin-top: 2.7vh;
+      left: 63%;
+      width: 1.1vh;
+      height: 1.1vh;
+      background-color: darken(#20252b, 6%);
+      animation: bubble 1.6s ease-in-out 1s infinite;
+    }
+    #area {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 50%;
+      height: 50%;
+      background-color: transparent;
+      transform-origin: 15% 60%;
+      animation: flip #{2.1}s ease-in-out infinite;
+      #sides {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transform-origin: 15% 60%;
+        animation: switchSide #{2.1}s ease-in-out infinite;
+        #handle {
+          position: absolute;
+          bottom: 18%;
+          right: 80%;
+          width: 35%;
+          height: 20%;
+          background-color: transparent;
+          border-top: 1vh solid #20252b;
+          border-left: 1vh solid transparent;
+          border-radius: 100%;
+          transform: rotate(20deg) rotateX(0deg) scale(1.3, .9);
+        }
+        #pan {
+          position: absolute;
+          bottom: 20%;
+          right: 30%;
+          width: 50%;
+          height: 8%;
+          background-color: #20252b;
+          border-radius: 0 0 1.4em 1.4em;
+          transform-origin: -15% 0;
+        }
+      }
+      #pancake {
+        position: absolute;
+        top: 24%;
+        width: 100%;
+        height: 100%;
+        transform: rotateX(85deg);
+        animation: jump #{2.1}s ease-in-out infinite;
+        #pastry {
+          position: absolute;
+          bottom: 26%;
+          right: 37%;
+          width: 40%;
+          height: 45%;
+          background-color: #20252b;
+          box-shadow: 0 0 3px 0 #20252b;
+          border-radius: 100%;
+          transform-origin: -20% 0;
+          animation: fly #{2.1}s ease-in-out infinite;
+        }
+      }
+    }
+  }
+  @keyframes jump {
+    0% {
+      top: 24%;
+      transform: rotateX(#{85}deg);
+    }
+    25% {
+      top: 10%;
+      transform: rotateX(0deg);
+    }
+    50% {
+      top: 30%;
+      transform: rotateX(#{85}deg);
+    }
+    75% {
+      transform: rotateX(0deg);
+    }
+    100% {
+      transform: rotateX(#{85}deg);
+    }
+  }
+  @keyframes flip {
+    0% {
+      transform: rotate(0deg);
+    }
+    5% {
+      transform: rotate(-#{27}deg);
+    }
+    30%,
+    50% {
+      transform: rotate(0deg);
+    }
+    55% {
+      transform: rotate(#{27}deg);
+    }
+    83.3% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  @keyframes switchSide {
+    0% {
+      transform: rotateY(0deg);
+    }
+    50% {
+      transform: rotateY(180deg);
+    }
+    100% {
+      transform: rotateY(0deg);
+    }
+  }
+  @keyframes fly {
+    0% {
+      bottom: 26%;
+      transform: rotate(0deg);
+    }
+    10% {
+      bottom: 40%;
+    }
+    50% {
+      bottom: 26%;
+      transform: rotate(-190deg);
+    }
+    80% {
+      bottom: 40%;
+    }
+    100% {
+      bottom: 26%;
+      transform: rotate(0deg);
+    }
+  }
+  @keyframes bubble {
+    0% {
+      transform: scale(.15, .15);
+      top: 80%;
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.1, 1.1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(.33, .33);
+      top: 60%;
+      opacity: 0;
+    }
+  }
+  @keyframes pulse {
+    0% {
+      transform: scale(1, 1);
+      opacity: .25;
+    }
+    50% {
+      transform: scale(1.2, 1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1, 1);
+      opacity: .25;
+    }
+  }
+}
+
+/* animated elements */
+.animate {
+  visibility: hidden;
+  .no-js &,
+  .lt-ie10 &,
+  .lt-ie9 & {
+    visibility: visible;
+  }
+}
+
+.animated {
+  //!important is necessary
+  visibility: visible !important;
+}
+
+/* boxed layout */
+
+#box_wrapper,
+#canvas {
+  overflow: visible;
+  position: relative;
+}
+
+#box_wrapper > section,
+//for Unyson sections
+#box_wrapper > div > section {
+  position: relative;
+  clear: both;
+}
+
+#canvas.boxed {
+  //fix for top-bottom-margin
+  padding: 1px 0;
+  background-color: #f2f2f2;
+}
+
+body.boxed {
+  position: static;
+  width: auto;
+  height: auto;
+}
+
+.pattern1 {
+  background-image: url(../img/patterns/pattern1.png);
+}
+
+.pattern2 {
+  background-image: url(../img/patterns/pattern2.png);
+}
+
+.pattern3 {
+  background-image: url(../img/patterns/pattern3.png);
+}
+
+.pattern4 {
+  background-image: url(../img/patterns/pattern4.png);
+}
+
+.pattern5 {
+  background-image: url(../img/patterns/pattern5.png);
+}
+
+.pattern6 {
+  background-image: url(../img/patterns/pattern6.png);
+}
+
+.pattern7 {
+  background-image: url(../img/patterns/pattern7.png);
+}
+
+.pattern8 {
+  background-image: url(../img/patterns/pattern8.png);
+}
+
+.pattern9 {
+  background-image: url(../img/patterns/pattern9.png);
+}
+
+.pattern10 {
+  background-image: url(../img/patterns/pattern10.png);
+}
+
+.pattern11 {
+  background-image: url(../img/patterns/pattern11.png);
+}
+
+.boxed .container {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+@media (max-width: 500px) {
+  .boxed .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+}
+
+.boxed #box_wrapper.container {
+  padding: 0;
+  -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  margin-top: 120px;
+
+  @media(min-width:1600px) {
+    & {
+      max-width: 1560px;
+    }
+  }
+
+  &.top-bottom-margins {
+    margin-top: 150px;
+    margin-bottom: 120px;
+  }
+}
+
+/*common background sections*/
+.s-map-dark {
+  background-image: url("../img/parallax/map-dark.jpg");
+}
+
+.s-map-light {
+  background-image: url("../img/parallax/map-light.jpg");
+}
+
+.s-light-abstract {
+  background-image: url("../img/parallax/light-abstract.jpg");
+}
+
+.s-light-wood {
+  background-image: url("../img/parallax/light-wood.jpg");
+}
+
+/*bordered columns*/
+.c-bordered {
+  [class*='col-'] {
+    border: 1px solid $borderColor;
+    margin-top: -1px;
+    margin-left: -1px;
+  }
+
+  @media (min-width: 768px) {
+    &.c-bordered-center {
+      .row {
+        [class*='col-'] {
+          &:first-child {
+            border-left-color: transparent;
+          }
+          &:last-child {
+            border-right-color: transparent;
+          }
+        }
+        &:first-child {
+          [class*='col-'] {
+            border-top-color: transparent;
+          }
+        }
+        &:last-child {
+          [class*='col-'] {
+            border-bottom-color: transparent;
+          }
+        }
+      }
+    }
+  }
+}

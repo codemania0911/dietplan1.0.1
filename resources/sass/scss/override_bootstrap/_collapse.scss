@@ -1,0 +1,158 @@
+/* bootstrap collapse*/
+//unstyled
+[data-toggle="collapse"] {
+  display: inline-block;
+  position: relative;
+  padding-right: 20px;
+  margin-bottom: 10px;
+  &:after {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -7px;
+
+    font-size: 10px;
+    font-family: 'FontAwesome';
+    content: "\f078";
+  }
+  &.collapsed {
+    &:after {
+      content: "\f054";
+    }
+  }
+}
+
+//cards as tabs
+[role="tablist"] {
+  .card {
+    border-radius: 0;
+    border: none;
+    background: none;
+  }
+  .card-header {
+    padding: 0;
+    background: none;
+    border: none;
+    a {
+      margin-right: 13px;
+      color: #fff;
+      border-radius: 5px;
+      font-size: 14px;
+      text-transform: uppercase;
+      display: block;
+      position: relative;
+      padding: 15px 40px;
+      background-color: $colorMain;
+      i {
+        margin-right: 13px;
+        color: $lightColor;
+      }
+      &:before,
+      &:after {
+        text-align: center;
+        font-family: inherit;
+        font-size: 27px;
+        font-weight: 100;
+        content: '';
+        width: 60px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        color: $lightColor;
+        transition: opacity 0.3s ease-in-out;
+      }
+      &:after {
+        height: 30px;
+        line-height: 30px;
+        margin-top: -18px;
+        vertical-align: top;
+        top: 50%;
+        bottom: auto;
+        content: '-';
+        background: none;
+      }
+      &:hover {
+        color: #fff;
+       
+      }
+      &.collapsed {
+        background-color: #f2f2f2;
+        color: $darkgreyColor;
+        i {
+          color: $colorMain2;
+        }
+        &:hover {
+          background-color: $colorMain;
+          color: $lightColor;
+          i {
+            color: $lightColor;
+          }
+          &:after {
+            content: '+';
+            margin-top: -15px;
+            color: #fff;
+          }
+        }
+        &:after {
+          content: '+';
+          font-size: 14px;
+          margin-top: -15px;
+          color: $colorMain2;
+        }
+      }
+    }
+  }
+  .card-body {
+    padding: 20px 40px 33px;
+      @media(max-width: 767px) {
+        padding: 10px 19px 23px;
+    }
+  }
+  .media img {
+    max-width: 80px;
+  }
+}
+
+
+.ds [role="tablist"] .card-header a {
+  &:hover {
+    opacity: 1;
+    color: #fff;
+  }
+}
+
+
+//cards as tabs
+.bg-card [role="tablist"] {
+  .card {
+    border-radius: 0;
+    border: none;
+    background: none;
+  }
+  .card-header {
+    padding: 0;
+    background: none;
+    border: none;
+    a {
+      background-color: $colorMain2;
+      i {
+        color: $lightColor;
+      }
+      &.collapsed {
+        background-color: #f2f2f2;
+        color: $darkgreyColor;
+        i {
+          color: $colorMain;
+        }
+        &:hover {
+          background-color: $colorMain2;
+          color: $lightColor;
+          i {
+            color: $lightColor;
+          }
+        }
+      }
+    }
+  }
+}

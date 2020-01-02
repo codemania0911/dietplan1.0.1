@@ -1,0 +1,447 @@
+ПРЕДВАРИТЕЛЬНЫЙ БЛОК: ОТ ТАРАСА!!!!!!!!!!!
+
+- !! TZ
+
+- !! Html Version
+
+- подробное изучение всех psd с составлением списка вопросов
+        - каждый элемент
+        - rollovers
+        - закачивать необходимые шрифты с Google Fonts
+- ответить на вопросы
+        - какую тему взять за основу
+        - какие блоки оставить в базовой теме
+        - какие плагины, виджеты будут испоьзованны
+        - какие типы слайдеров/каруселей будут испоьзованны в каждом конкретном случае
+        - где будет использован Unyson
+        - структура front-page и blog-page
+                - static front-page
+                - widget areas
+                - типы exerpts
+        - как будут отображаться sticky посты
+
+
+ВОПРОСЫ:
+        * из предварительного блока
+
+developers:
+
+?
+
+designers:
+
+?
+
+
+ИСПОЛЬЗУЕМЫЕ СРЕДСТВА:
+
+plugins:
+
+*
+
+widgets:
+
+* 
+
+unyson extensions:
+
+* 
+
+unyson shortcodes:
+
+*
+
+
+СТАРТОВЫЙ БЛОК:
+
+- Новый домен hosts, httpd-vhosts.conf
+- Устанавливаем чистый Wordpress
+- Включаем debug mode
+- Устанавливаем предыдущую тему с демо контентом (если есть)
+- Переименовать тему
+- Отключаем Preloader, останавливаем Sliders/Carousels
+x Создаем новую тему (если нет предыдущей)
+x Создаем новую child тему (если нет предыдущей)
+x Активировать child
+- Устанавливаем плагины необходимые в большинстве тем
+        * Widget CSS Classes
+        * Shortcodes in Menus
+- Устанавливаем технические плагины
+        * Theme Unit Test
+        * Monster Widget
+        * Woocommerce Unit Test
+        * Woocommerce Monster Widget
+        * rtl tester
+        * Theme Check
+        * ThemeForest-Check
+        * Debug Bar
+        * Regenerate Thumbnails
+        * Duplicate Page
+        * Widget Clone
+- Папка .DB в корне темы с дампом проэкта theme.sql
+- Создаем и устанавливаем .git repository
+- Добавляем .gitignore в репозиторий
+- Создаем phpStorm project для темы
+- Включить phpStorm Wordpress support ( Settings -> Languages&Frameworks -> PHP -> WordPress )
+x Исключаем .idea из репозиториев
+		* Project Settings > Version Control > Ignored Files
+		* если уже включен Terminal -> git rm --cached .idea/* ( ! из корня темы )
+- Initial Commit
+- bookmarks
+- Favicon
+- default images
+- theme screenshots 
+        * 1200 x 900 ( themeforest )
+        * theme, demo-content, 
+x Создаем 3-4 демо поста (если нет предыдущей темы)
+- установить сетку (вертикальный ритм)
+        ! длина шага по line-height базового текста
+- создать тестовые заглушки для неиспользованных widgetarias
+        * widget-settings-importexport
+
+
+ОСНОВНОЙ БЛОК:
+        
+- skeleton
+        - удалить неиспользуемые страницы, плагины, виджеты
+        - создать все страницы
+        - установить плагины
+        - расставить widget arias
+        - меню
+        - виджеты, юнисон блоки для каждой страницы
+        - установить и настроить моды
+        - page titles, breadcrumbs, sidebars positions
+        - pagination blocks
+        - comments blocks
+- типография
+        - fonts
+        - colors
+                - main color
+                - headers color
+                - text color
+                - border color
+                - main bg
+                - content bg
+        - body & widgets text ( font, font-size, font-weight, line-height, letter-spacing)
+        - headers
+        - p margins
+        - blockquote
+        - tables
+        - lists
+        - links
+        - typography in places
+                - in comment
+                - in widget
+                - in page
+        - form elements
+- spacing
+- excerpts
+        ! NO image placeholders
+        x layouts
+        - sticky posts
+- single page
+- author bio
+- comment form
+- comments
+        - comments closed case
+- excerpt-full-article
+- partials (excerpt/single)
+        - video - audio - chat
+                - video page
+        - image - gallery
+        - aside - status - link - quote
+                x with backgrounds
+- pages
+		- archive
+        - search
+        - partials none, page
+        - image
+- хедер
+        - главное меню
+        - top slider
+        - breadcrumbs styles
+- футер
+        - case: no widgets in footer
+- виджеты
+- mailchimp/contact form 7
+x неиспользуемые виджеты
+- pages
+        - front page
+        - 404
+        - faq
+        - about
+        - contacts    
+
+
+ДОПОЛНИТЕЛЬНЫЙ БЛОК:
+
+    ! для каждого пункта - все подстраницы
+
+- gallery
+        - shotrcode
+        - regular
+        - full width
+        - extended
+        - item
+- shop
+        - loop & items
+        - single
+        - widgets
+        - подстраницы
+
+
+БЛОК МЕЛОЧЕЙ:
+
+- sticky menu
+        - on scroll styles
+        - on scroll submenu
+- sticky sidebar
+x menu multilevel
+- logo variants
+- search form
+- social menus
+- slider/carousel controls
+- breadcrumbs navigation
+- pagination
+        - blog-page
+        - archieve
+        - single
+                - sub-pages
+                - posts links
+        - comments
+        - image
+- edit links
+x dropcaps
+- post controls line
+- comments title
+- password form
+- boxed site
+- empty category
+- no title link
+- preloader color
+x foot text with image inside blockquote
+- list bulets color
+- icons clickable
+- forms responce text color
+- old fonts
+
+ПОСТ-ФИКСЫ:
+
+- 
+
+БЛОК ДОВОДКИ:
+
+- pixel perfect и вертикальный ритм
+- responsive
+        * spacing for all widget arias
+- animation
+
+
+КОДОВЫЙ БЛОК:
+
+php:
+- Переименовать префиксы, языковый домен, название темы в комментариях, строковых константах
+        * по всей теме php,js,css
+        * custom shortcodes
+        * имена файлов ( весь проэкт )
+        * shortcodes в виджетах, слайдерах, пунктах меню
+        * архивы с плагинами
+        * варианты coach_ COACH_ coach-, LifeCoach, lifecoach
+        * custom css плагинов через админку
+- tgm plugins
+- unyson extensions in manifest
+- commented/unused blocks
+- text domains, slugs and/or prefixes need to be a plain text and not a variable
+- коментарии для функций
+- проверки для функций if exist
+- проверки для plugins и shortcodes if defind
+- проверки для mods if exist
+- prefix everything
+        - PHP function names
+        - PHP class names
+        - PHP global variables
+                * regex:    global|define\(
+        - constants
+        - Action/Filter hooks
+                * regex:    add_action|add_filter
+        - Script/Style handles
+                * regex:    wp_enqueue_
+        - image size names
+                * regex:    add_image_size
+        - database entries    
+- thumbnail sizes
+- sanitize customizer settings
+- строки без перевода
+- чужеродные префиксы, языковые домены
+        * формы: coach_ COACH_ coach-, LifeCoach, lifecoach, lifecoach_, lifecoach-, LIFECOACH_, life_coach_
+        * префиксы:   regex:  lb_|maternity|woocommerce|pure|videomag|handyman|lifecoach
+        * fw, unyson
+- escape
+        - echo $
+        - переведенные, но незаэскейпленные строки
+                * regex:  [^a-zA-Z0-9']_(_|e|x|n|nx|ex)\(   filter: *.php
+        - echo ', prinf       ->  esc_html__ esc_html_e esc_html_x
+        - title="", alt=""  ->  esc_attr__ esc_attr_e esc_attr_x
+                * regex:  title=|alt=
+        - urls: esc_url
+                * regex:  src=|href=|url=|http|get_template_directory_uri|wp_enqueue
+                * including WordPress related
+                * all home_url() must include a trailing slash such as home_url('/')
+        - добавлять недостающие kses tags
+        - if dynamic data is rendered inside an attribute that triggers a JavaScript event,
+            it must be escaped with esc_js()
+                regex:  javascript:
+        - $wpdb
+- wp_enqueue to load any external scripts/stylesheet 
+        * wp_enqueue_script / wp_enqueue_style
+        * for inline: wp_add_inline_style / wp_add_inline_script
+        * for login screen: login_enqueue_scripts
+        * for admin dashboard: admin_enqueue_scripts
+        * these hooks should never be used to enqueue files:
+                admin_print_scripts, admin_print_styles, wp_print_styles, init, wp_head, wp_footer
+- avoid and not to hardcode custom body_class()
+        * use: add_filter( 'body_class', 'my_funk', 99 ); my_funk( $classes ) { return $classes; }
+- wp_footer should be placed immediately before body closing tag
+- use get_template_directory when including/requiring files
+        * regex:  include |require| dirname 
+- remove flush_widget_cache
+
+css:
+- commented blocks
+- empty selectors
+        * regex: \{\s*\}
+- unused blocks
+- коментарии для css блоков
+- style.css structure
+- retina-specific styles
+- vendor-prefixes
+        * border-radius, box-shadow, transition, transform(ie9), keyframes, gradient
+- rem
+- 0px
+        * caces:    :0px, 0px,(0px,,0px
+x rgba -> opacity
+        *visibility
+x hover-active-focus
+- unset,initial -> auto (ie)
+        * regex:    unset|initial
+        * inherit: inline parent element -> to block child element:  "display: inherit;"  not working in ie
+- шапка для css
+        - description 
+                * single line
+                - child theme
+                - readme.txt -> description
+        - tags
+                * single line
+                * from themecheck $allowed_tags array ( plugins\theme-check\checks\style_tags.php )
+                * 5 minimum
+
+js:
+- commented/unused blocks
+- коментарии для функций
+- "use strict"
+
+
+- удалить ненужные .js, .css
+- envato new fixes
+
+
+ФИНАЛЬНЫЙ БЛОК:
+
+- UPDATE Wordpress, Plugins, PrettyPhoto, TGM Plugin Activation
+        * tgm-plugin-activation plugins versions
+- проверить все элементы на всех страницах
+        - на всех респонсивах
+        - со всеми настройками из кастомайзера
+        - во всех браузерах
+        - use theme-unit-test recomendations
+        - form submit / form error for every form
+- проверить все блоки без тумб
+- протестировать widgetarias
+- responsinator
+- ТЕСТОВЫЙ СЕРВЕР
+- валидация
+        * используется тестовый сервер
+        * сгенерировать sitemap.xml  ->  https://www.xml-sitemaps.com
+        * залить sitemap.xml на тестовый сервер ( в корень wordpress )
+        * валидация по sitemap  -> https://ole.michelsen.dk/tools/validator.html
+- rtl (RTL Tester)
+- editor styles
+- color schemes
+- theme check
+        * theme
+        * child theme
+- theme-forest check
+        * theme
+        * child theme
+        ! make sure your theme doesn't raise any errors or warnings with theme-check
+- debug console
+- browser console errors
+- admin/customizer errors/warnings
+- child theme
+- перевод poedit
+        * the localization file should be in English and delivered as .POT file.
+        * .POT will contain all translation strings.
+        * .POT file name should match the themes-slug.
+        * theme should not add the en_US.mo or en_US.po because English already implies
+
+
+^ТЕСТОВЫЙ СЕРВЕР:
+
+- залить на тестовый сервер
+- phpStorm Deployment
+- CLEAN БЛОК для подготовки к demo content
+- заказать demo content
+x заказать текст для style.css шапки
+x заказать документацию
+
+
+^CLEAN БЛОК:
+
+- clean widgets
+        - удалить тестовые заглушки для неиспользованных widgetarias
+        * trash
+        * not used
+- clean content
+        * categoties, posts, pages, plugin content
+        * trash
+        * pending
+        * comments no pages
+        * unyson admin templates
+- clean images
+        * theme images folder
+        * media gallery
+        * image sizes
+        * screenshots
+                * theme
+                * child-theme
+                * demo-content                
+- widgets/customizer defaults
+
+
+РЕЛИЗ БЛОК:
+
+! используется тестовый сервер
+
+- theme-preview.png 590x300
+- coach-thumbnail.png 80x80
+- активировать preloader
+- запустить sliders, carousels
+- убрать .git, .gitignore .idea, .ds_store, less/sass
+- убрать сетку
+- demo content buckup
+- архив с demo / без demo
+- plugin exports
+x proper documentation
+
+
+"НАЧИСТО" БЛОК:
+
+- чистый wordpress
+- debug true
+- установить тему
+- без всего
+- установить Theme Unit Test & Monster Widget
+- установить demo content
+! после исправления ошибок
+        * повторяются необходимые пункты из ФИНАЛЬНОГО и ТЕСТОВОГО блоков
+        * снова "НАЧИСТО" БЛОК

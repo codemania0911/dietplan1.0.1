@@ -1,0 +1,126 @@
+/* access_press */
+// http://demo.accesspressthemes.com/wordpress-plugins/accesspress-social-counter/
+.apsc-facebook-icon {
+  background-color: #507cbe;
+}
+
+.apsc-twitter-icon {
+  background-color: #00abef;
+}
+
+.apsc-youtube-icon {
+  background-color: #e52d27;
+}
+
+.apsc-post-icon {
+  background-color: #5f6d80;
+}
+
+.apsc-soundcloud-icon {
+  background-color: #ff8800;
+}
+
+.apsc-dribble-icon {
+  background-color: #ea4c89;
+}
+
+.apsc-comment-icon {
+  background-color: #464646;
+}
+
+.apsc-edit-icon {
+  background-color: #837d7d;
+}
+
+.apsc-google-plus-icon {
+  background-color: #d93e2d;
+}
+
+.apsc-instagram-icon {
+  background-color: #e4405f;
+}
+
+.apsc-each-profile a {
+  color: white !important;
+}
+
+.apsc-each-profile a:hover {
+  color: white !important;
+  text-decoration: none !important;
+}
+
+.apsc-theme-4 {
+  .apsc-each-profile {
+    margin-bottom: 10px;
+  }
+
+  .apsc-inner-block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .social-icon {
+    display: inline-block;
+    margin-right: auto;
+    padding: 4px 20px;
+    transition: all 0.5s ease-in-out;
+    @media (max-width: 767px) {
+      padding: 4px 10px;
+    }
+  }
+
+  .apsc-each-profile a {
+    display: block;
+    position: relative;
+    padding: 20px 18px 20px 70px;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #fff;
+    line-height: 1;
+    border-radius: 5px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    font-family: 'Roboto', sans-serif;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  //icon
+  .apsc-each-profile a .fa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    border-right: 1px solid rgba($lightColor, 0.4);
+    width: 60px;
+    font-size: 16px;
+    transform: none;
+    transition: all 0.5s ease-in-out;
+  }
+
+
+  .apsc-count {
+    font-weight: 500;
+    border-radius: 0;
+    color: #fff;
+    display: inline-block;
+    font-size: inherit;
+    text-align: center;
+    position: relative;
+    padding: 4px 4px;
+    transition: all 0.5s ease-in-out;
+
+  }
+
+  .apsc-media-type {
+    display: inline-block;
+    padding: 4px 0;
+  }
+}
+

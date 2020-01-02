@@ -1,0 +1,19 @@
+/*
+** Shortcodes
+*/
+@import 'shortcodes/icon-box';
+@import 'shortcodes/special-heading';
+@import 'shortcodes/number-card';
+@import 'shortcodes/price_table';
+@import 'shortcodes/quote-item';
+@import 'shortcodes/items-masonry';
+
+.contact-form {
+  textarea {
+    min-height: 160px;
+  }
+}
+
+.excerpt {
+  font-size: 20px;
+}

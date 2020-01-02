@@ -1,0 +1,60 @@
+/*
+** 404
+*/
+
+.error-404 {
+  .page-header {
+    h3 {
+      margin-top: 15px;
+      font-size: 100px;
+      line-height: 1;
+      margin: 0;
+      color: $colorMain;
+      @media (min-width: 992px) {
+        font-size: 160px;
+        margin-bottom: -5px;
+      }
+    }
+    
+    p {
+      margin-top: 3px;
+      font-size: 24px;
+      color: #fff;
+      @media (min-width: 768px) {
+        letter-spacing: 0;
+        font-size: 30px;
+      }
+      &:last-child {
+        color: #999;
+        font-size: 16px;
+         margin: 33px 0 0;
+      }
+    }
+  }
+  h6 {
+    color: #999;
+    margin-bottom: 13px;
+  }
+  .widget_search {
+    margin: 20px 0 8px;
+  }
+  p {
+    margin-bottom: 9px;
+  }
+  .widget_search button:before, .widget_mailchimp button:before, .widget_product_search form:before {
+    color: $colorMain;
+      content: "\f040";
+  }
+  @media (min-width: 1600px) {
+    &.s-overlay.ls:before {
+      display: none;
+    }
+  }
+  input[type="email"], .form-control {
+    background-color: rgba(250, 239, 237, 0.6);
+  }
+  input[type="email"].search-field.form-control:focus {
+    border: 1px solid #9e9c9c;
+     background-color: rgba(250, 239, 237, 0.6);
+  }
+}
