@@ -23,5 +23,4 @@ class PdfdownloadController extends Controller
         ]);
         return $pdf->download('Grocery_list_for_week.pdf');
     }
-
 }
